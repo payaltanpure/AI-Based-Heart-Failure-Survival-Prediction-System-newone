@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Failure Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa; /* Light cyan background */
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h2 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }̥
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        h3 {
+            text-align: center;
+            margin-top: 30px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h2>Heart Failure Risk Predictor</h2>
+    <form method="POST">
+        <label>Age:
+            <input type="number" step="any" name="age" required>
+        </label>
+        <label>Anaemia (0 or 1):
+            <input type="number" name="anaemia" required>
+        </label>
+        <label>Creatinine Phosphokinase:
+            <input type="number" name="creatinine_phosphokinase" required>
+        </label>
+        <label>Diabetes (0 or 1):
+            <input type="number" name="diabetes" required>
+        </label>
+        <label>Ejection Fraction:
+            <input type="number" name="ejection_fraction" required>
+        </label>
+        <label>High Blood Pressure (0 or 1):
+            <input type="number" name="high_blood_pressure" required>
+        </label>
+        <label>Platelets:
+            <input type="number" step="any" name="platelets" required>
+        </label>
+        <label>Serum Creatinine:
+            <input type="number" step="any" name="serum_creatinine" required>
+        </label>
+        <label>Serum Sodium:
+            <input type="number" name="serum_sodium" required>
+        </label>
+        <label>Sex (0=Female, 1=Male):
+            <input type="number" name="sex" required>
+        </label>
+        <label>Smoking (0 or 1):
+            <input type="number" name="smoking" required>
+        </label>
+        <label>Time:
+            <input type="number" name="time" required>
+        </label>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if result %}
+        <h3>Prediction: {{ result }}</h3>
+    {% endif %}
+</body>
+</html>
